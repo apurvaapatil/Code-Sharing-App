@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("snippetshare")
 public class WebController {
     @Autowired
     CodeService service;
@@ -27,22 +27,22 @@ public class WebController {
         return "home";
     }
 
-    @GetMapping("snippetshare/home")
+    @GetMapping("/home")
     public String getHomePage(){
         return "home";
     }
 
-    @GetMapping("snippetshare/about")
+    @GetMapping("/about")
     public String getAboutPage(){
         return "aboutUs";
     }
 
-    @GetMapping("snippetshare/contact")
+    @GetMapping("/contact")
     public String getContactPage(){
         return "contact";
     }
 
-    @GetMapping("snippetshare/code/get/{id}")
+    @GetMapping("/code/get/{id}")
     public String getCodeById(Model model, @PathVariable UUID id){
         try{
             Code newCode = service.getCodeById(id);
@@ -83,7 +83,7 @@ public class WebController {
         }
     }
 
-    @GetMapping("snippetshare/code/latest")
+    @GetMapping("/code/latest")
     public String getLatestCode(Model model){
         List<Code> lastestCodeList = service.getLatestCode();
         model.addAttribute("codeLists", lastestCodeList);

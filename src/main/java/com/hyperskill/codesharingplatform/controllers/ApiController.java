@@ -14,12 +14,12 @@ import java.util.Map;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("snippetshare")
 public class ApiController {
     @Autowired
     CodeService service;
 
-    @GetMapping("snippetshare/api/code/get/{id}")
+    @GetMapping("/api/code/get/{id}")
     public Code getCodeById(@PathVariable UUID id){
         try{
             Code newCode = service.getCodeById(id);
@@ -43,19 +43,19 @@ public class ApiController {
         }
     }
 
-    @GetMapping("snippetshare/api/code/latest")
+    @GetMapping("/api/code/latest")
     public List<Code> getLatestCode(){
         List<Code> lastestCodeList = service.getLatestCode();
         return lastestCodeList;
     }
 
-    @PostMapping("snippetshare/api/code/new")
+    @PostMapping("/api/code/new")
     public Map<String, UUID> postCode(@RequestBody Code code){
         service.addCode(code);
         return Collections.singletonMap("id",code.getId());
     }
 
-    @DeleteMapping("snippetshare/api/code/{id}")
+    @DeleteMapping("/api/code/{id}")
     public void deleteCode(@PathVariable UUID id){
         service.deleteCode(id);
     }
