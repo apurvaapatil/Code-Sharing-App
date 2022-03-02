@@ -25,9 +25,14 @@ function send() {
 
     if (xhr.status == 200) {
       var x = document.getElementById("sentAlert");
+
+      const obj = JSON.parse(xhr.response);
+      document.getElementById("postId").innerHTML = obj.id;
+
       if(x.classList.contains("d-none")){
         x.classList.remove("d-none");
         x.classList.add("show");
       }
     }
+    console.log(xhr.response);
 }
