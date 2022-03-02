@@ -1,0 +1,64 @@
+body{
+    background-color: #f1e0d550;
+}
+
+.about{
+    min-height: 80vh;
+    margin: 30px 140px;
+}
+
+.maindiv{
+    height: 180px;
+    text-align: center;
+}
+
+.main{
+    border-bottom: 1px solid transparent;
+    width: 400px;
+}
+
+.main:hover{
+    border-bottom: 1px solid black;
+    cursor: pointer;
+    width: 400px;
+}
+
+img{
+    border-radius: 5px;
+    margin-top: 5px;;
+}
+
+.desc{
+    max-width: 800px;
+    display: block;
+    margin: auto auto;
+    padding: 5px;
+}
+
+.desc h2, .tools h2{
+    border-bottom: 1px solid black;
+
+}
+
+.tools{
+    max-width: 800px;
+    display: block;
+    margin: 10px auto;
+    padding: 5px;
+}
+
+h2{
+    font-family: "Nunito", sans-serif;
+    font-weight: 400;
+}
+
+p{
+    font-family: "Roboto", sans-serif;
+}
+
+.tablemain td,
+.tablemain th {
+    border: 0;
+    margin: 20px 10px;
+    padding: 15px;
+}

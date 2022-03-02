@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Highlight.js Import -->
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/017e6b35e9.js" crossorigin="anonymous"></script>
+
+        <!-- Bootstrap Scripts -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <!-- CSS Stylesheets -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <link rel="stylesheet" type="text/css" media="all" href="/css/submitNewCode.css" th:href="@{/css/submitNewCode.css}" />
+
+        <script type="text/javascript" src="/js/submitCode.js" th:src="@{/js/submitCode.js}"></script>
+        <title>Share Snippet</title>
+    </head>
+    <body>
+        <div th:replace="navbar :: navbar"></div>
+        <div class="main">
+            <div class="form-group">
+                <label class="heading" for="code_snippet">New Snippet</label>
+                <div id="sentAlert" class="alert alert-success alert-dismissible fade d-none" role="alert">
+                    Success! Use this Id <strong><span th:utext="${snippetId}"></span></strong> to access the snippet.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <textarea class="form-control" id="code_snippet" cols="80" rows="15"  placeholder="// Write your code here"></textarea>
+                <p>Additional Settings</p>
+                <hr>
+                <div class="settings">
+                    <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="time">Expire Time (seconds):</span>
+                        </div>
+                        <input id="time_restriction" type="text" class="form-control" aria-label="time" aria-describedby="time" value="0">
+                    </div>
+                    <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="views">Max Views:</span>
+                        </div>
+                        <input id="views_restriction" type="text" class="form-control" aria-label="views" aria-describedby="views" value="0">
+                    </div>
+                </div>
+                <hr>
+                <button type="submit" class="btn" onclick="send()">Submit</button>
+            </div>
+        </div>
+        <div th:replace="footer :: footer"></div>
+    </body>
+</html>

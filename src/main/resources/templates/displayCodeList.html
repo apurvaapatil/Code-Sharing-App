@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:uth="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8" >
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/017e6b35e9.js" crossorigin="anonymous"></script>
+
+        <!-- Bootstrap Scripts -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <!-- CSS Stylesheets -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <!-- Highlight.js Import -->
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        <link th:href="@{/css/displayCode.css}" rel="stylesheet" />
+
+        <script type="text/javascript" src="/js/displayCode.js" th:href="@{/js/displayCode.js}"></script>
+
+        <title>Latest Code</title>
+    </head>
+    <body>
+        <div th:replace="navbar :: navbar"></div>
+        <div class="latest">
+            <h2>Latest Snippets</h2>
+        </div>
+        <div th:if= "${codeLists == null}">
+            <div class="emptyList">
+                <div class="main-404">
+                    <img src="resources/images/no-content.png" th:src="@{/images/404-Page-Not-Found _Two Color.png}">
+                    <h2>Oops.</h2>
+                    <p class="no-content">No snippet has been posted yet! But you can click the button below to go back to the homepage.</p>
+                    <div class="btn-home">
+                        <button>HOME</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="snippet">
+            <div class="codesnippet" th:each="codeList : ${codeLists}">
+                <div class="date">
+                    <p id="load_date" th:text="${codeList.date}"></p>
+                </div>
+                <div>
+                    <span class="copySpan" data-toggle="tooltip" data-placement="top" title="Copy to Clipboard"><i class="fa-regular fa-copy copybtn" id="copy" onclick="copyText()"></i></span>
+                </div>
+                <div>
+                    <pre id="code_snippet"><code th:text="${codeList.code}"></code></pre>
+                </div>
+            </div>
+        </div>
+        <div th:replace="footer :: footer"></div>
+    </body>
+</html>

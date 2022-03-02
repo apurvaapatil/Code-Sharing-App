@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/017e6b35e9.js" crossorigin="anonymous"></script>
+
+        <!-- Bootstrap Scripts -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <!-- CSS Stylesheets -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <link rel="stylesheet" th:href="@{/css/home.css}" >
+        <script type="text/javascript" src="/js/home.js" th:src="@{/js/home.js}"></script>
+
+        <title>Snippet Share</title>
+    </head>
+    <body>
+        <div th:fragment="navbar" class="section1 container-fluid">
+            <nav class="navbar navbar-expand-lg ">
+                <a class="navbar-brand" href="#" th:href="@{'/snippetshare/home'}">SnippetShare</a>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" th:href="@{'/snippetshare/home'}" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{'/snippetshare/about'}" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{'/snippetshare/contact'}" href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+<!--        <div th:insert="header :: navbar">  &lt;!&ndash; th:insert="File_Name : : Fragment_Name" &ndash;&gt;-->
+        </div>
+        <div class="section2">
+            <div class="prompt">
+                <p>What would you like to do today?</p>
+            </div>
+            <div class="options row">
+                <ul class="list-group">
+                    <li class="list-group-item" onclick="location.href='code/new'">Share a new snippet</li>
+                    <li class="list-group-item" onclick="location.href='code/latest'">View Latest Snippets</li>
+<!--                    <li class="list-group-item" onclick="location.href='code/new'">Share a new <i>secret</i> snippet</li>-->
+                    <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <li class="list-group-item">View a Secret Snippet</li>
+                    </a>
+                    <div class="collapse" id="collapseExample">
+                        <div class="row">
+                            <div class="col"><input type="text" class="form-control inputSnippet" placeholder="Snippet Id" id="snippetId" aria-label="codeId" aria-describedby="codeId">
+                            </div>
+                            <div class="col"><button type="submit" class="btn btn-primary" onclick="send()">Get Snippet</button>
+                            </div>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <div th:replace="footer :: footer"></div>
+    </body>
+</html>

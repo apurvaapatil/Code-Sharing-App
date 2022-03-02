@@ -1,0 +1,103 @@
+body{
+    margin: 0%;
+    display: block;
+    background-color: #f1e0d550;
+}
+
+.navbar, .options {
+    margin: 30px 140px;
+}
+
+a{
+    color: black;
+}
+
+.navbar-brand{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.navbar-brand:hover{
+    color: black;
+}
+
+.nav-item {
+    font-size: 20px;
+    margin: 5px 15px;
+}
+
+.nav-link{
+    border: 1px solid #f1e0d550;
+}
+
+.nav-link:hover{
+    border-bottom: 1px solid black;
+    color: #402318;
+}
+
+.section2{
+    display: flex;
+    min-height: 75vh;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+}
+
+.prompt{
+    margin-top: 40px;
+    font-size: large;
+}
+
+.options{
+    padding: 10px 10px;
+    margin: 0px 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.list-group-item{
+    margin: 20px;
+    width: 30rem;
+    text-align: center;
+    font-size: 17px;
+    border: 1px solid rgba(0, 0, 0, 0.692);
+}
+
+.list-group-item:hover{
+    background-color: black;
+    color: white;
+    cursor:pointer;
+}
+
+.btn{
+    margin: 20px 0px;
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+}
+
+.btn:hover{
+    background-color: #f1e0d550;
+    color: black;
+    border: 1px solid black;
+}
+
+.list-group a{
+    text-decoration: none;
+}
+
+.inputSnippet{
+    margin: 20px 10px 20px 20px;
+    width: 20rem;
+}
+
+.footer{
+    display:flex;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer a, .footer a:hover{
+    text-decoration: none;
+}

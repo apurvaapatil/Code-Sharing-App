@@ -1,0 +1,141 @@
+body {
+  background-color: #f1e0d550;
+}
+
+.latest{
+    margin: 10px;
+    text-align: center;
+}
+
+.snippet {
+  min-height: 80vh;
+  margin: 30px 140px;
+}
+
+.card {
+  display: flex;
+  padding: 15px;
+  max-width: 500px;
+  border: 0.5px solid rgba(88, 62, 119, 0.815);
+  border-radius: 15px;
+  margin: 5px auto;  /*this horizontally aligns the div */
+  font-size: 15px;
+}
+
+code {
+  display: flex;
+  overflow-x: scroll;
+  word-wrap: break-word;
+  max-width: 600px;
+  max-height: 800px;
+  margin: auto;  /*this horizontally aligns the div */
+  font-size: 15px;
+}
+
+.codesnippet{
+    border: 1px solid black;
+    padding: 5px 5px;
+    margin: 10px auto;
+    max-width: 600px;
+}
+
+.codesnippetOne{
+    padding: 5px 5px;
+    margin: 10px auto;
+    max-width: 600px;
+}
+
+#code_snippet {
+  font-family: monospace;
+}
+
+.shadow {
+  box-shadow: 0 5px 10px rgba(128, 132, 150, 0.363), 0 15px 40px rgba(128, 132, 150, 0.363);
+}
+
+.date {
+  margin: auto auto;  /*this horizontally aligns the div t-r-b-l */
+  width: 600px;
+  font-size: small;
+}
+
+#load_date{
+  font-size: medium;
+  font-weight: bold;
+}
+
+.time{
+  padding: 0px 15px;
+  margin-bottom: 0px;
+}
+
+.row{
+  height: 20px;
+}
+
+.list{
+    margin: auto auto;  /*this horizontally aligns the div t-r-b-l */
+    width: 600px;
+    max-height: 700px;
+    font-size: small;
+}
+
+hr{
+  width: 600px;
+}
+
+
+/* No Content */
+.main-404{
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  margin: 5px auto;  /*this horizontally aligns the div */
+  width: 500px;
+  align-items: center;
+  justify-content: center;
+  font-family:"Nunito Sans";
+  color: "white";
+  font-size: 1em;
+}
+
+img {
+  height: 400px;
+  width: 600px;
+}
+
+h2 {
+  font-weight:bold;
+}
+
+.no-content {
+  text-align: center;
+}
+
+.btn-home{
+    display: flex;
+    margin-top: 7px;
+}
+
+.copySpan{
+  max-width: 600px;
+  display: block;
+  width: fit-content;
+  margin-left: 34rem;
+  margin-right: 5px;
+  margin-top: 5px;
+  z-index: 1;
+}
+
+.tooltiptext{
+  display: hidden;
+}
+
+.tooltiptext:hover{
+  display: block;
+
+}
+
+.tooltiptext::after:hover{
+  content: "Copy to Clipboard";
+}

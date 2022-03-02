@@ -1,0 +1,44 @@
+body{
+    background-color: #f1e0d550;
+}
+
+.contact{
+    min-height: 80vh;
+    margin: 30px 140px;
+}
+
+.maindiv{
+    height: 150px;
+    text-align: center;
+}
+
+.main{
+    border-bottom: 1px solid transparent;
+    width: 400px;
+}
+
+.main:hover{
+    border-bottom: 1px solid black;
+    cursor: pointer;
+    width: 400px;
+}
+
+.links{
+    max-width: 800px;
+    display: block;
+    margin: auto auto;
+    padding: 5px;
+    text-align: center;
+}
+
+.ln{
+    width: 150px;
+    height: auto;
+    margin: 10px;
+}
+
+.git{
+    width: 150px;
+    height: auto;
+    margin: 10px;
+}
